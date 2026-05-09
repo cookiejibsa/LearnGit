@@ -820,6 +820,11 @@
             <td><span class="badge badge-purple">최초 1회</span></td>
           </tr>
           <tr>
+            <td>커밋(commit)</td>
+            <td>작업 내용을 저장소에 저장</td>
+            <td><span class="badge badge-blue">세이브 포인트</span></td>
+          </tr>
+          <tr>
             <td>push</td>
             <td>지역 저장소의 커밋을 원격 저장소로 업로드</td>
             <td><span class="badge badge-orange">업로드</span></td>
@@ -957,8 +962,8 @@
 
       <div class="info-box tip">
         <div class="info-box-label">💡 --global vs 로컬 설정</div>
-        <p><code>git config user.name</code>은 <strong>해당 저장소에만 적용</strong>됩니다.<br>
-        모든 저장소에 동일하게 적용하려면 <code>git config <strong>--global</strong> user.name "이름"</code>처럼 <code>--global</code> 플래그를 사용하세요.</p>
+        <p><code>git config user.name</code>은 <strong>해당 저장소(현재 폴더)에만 적용</strong>됩니다.<br>
+        모든 저장소(내 컴퓨터)에 동일하게 적용하려면 <code>git config <strong>--global</strong> user.name "이름"</code>처럼 <code>--global</code> 플래그를 사용하세요.</p>
       </div>
     </section>
 
@@ -971,6 +976,8 @@
           <div class="subtitle">팀장이 원격 저장소를 연결하고 최초 파일을 업로드</div>
         </div>
       </div>
+
+      <p style="font-size:14px;color:var(--text-dim);margin-bottom:20px;">협업을 시작하기 전, 팀장은 본인의 PC에서 원격 저장소를 <strong style="color:var(--text)">clone</strong>해야 합니다. 이 과정은 <strong style="color:var(--text)">최초 1회</strong>만 수행합니다.</p>
 
       <div class="code-block">
         <div class="code-header">
@@ -991,7 +998,7 @@
 <span class="cmt"># 4. 커밋 (메시지와 함께)</span>
 <span class="cmd">$</span> <span class="arg">git commit</span> <span class="flag">-m</span> <span class="str">"viewtest"</span>
 
-<span class="cmt"># 5. 원격 master 브랜치로 push (-u 옵션: 기본 upstream 설정)</span>
+<span class="cmt"># 5. 원격 master 브랜치로 push (-u 옵션: 기본 원격저장 설정)</span>
 <span class="cmd">$</span> <span class="arg">git push</span> <span class="flag">-u</span> <span class="path">origin</span> <span class="arg">master</span></pre>
         </div>
       </div>
@@ -1010,7 +1017,7 @@
 
       <div class="info-box tip">
         <div class="info-box-label">💡 -u 플래그란?</div>
-        <p><code>git push <strong>-u</strong> origin master</code>의 <code>-u</code>는 <strong>upstream을 설정</strong>한다는 의미입니다.<br>
+        <p><code>git push <strong>-u</strong> origin master</code>의 <code>-u</code>는 <strong>기본 원격저장소를 설정</strong>한다는 의미입니다.<br>
         이후에는 <code>git push</code>만 입력해도 자동으로 <code>origin master</code>로 push됩니다.</p>
       </div>
     </section>
@@ -1025,7 +1032,7 @@
         </div>
       </div>
 
-      <p style="font-size:14px;color:var(--text-dim);margin-bottom:20px;">협업을 시작하기 전, 팀원들은 각자의 PC에서 원격 저장소를 <strong style="color:var(--text)">clone</strong>해야 합니다. 이 과정은 <strong style="color:var(--text)">최초 1회</strong>만 수행합니다.</p>
+      <p style="font-size:14px;color:var(--text-dim);margin-bottom:20px;">팀장이 원격 저장소를 연결하고 첫 파일을 push하면, 팀원들이 clone할 준비가 완료됩니다. 이 과정은 <strong style="color:var(--text)">팀장이 최초 1회만 수행</strong>합니다.</p>
 
       <div class="code-block">
         <div class="code-header">
@@ -1061,6 +1068,8 @@
           <div class="subtitle">반드시 최신 상태를 받아온 후 작업 시작</div>
         </div>
       </div>
+
+      <p style="font-size:14px;color:var(--text-dim);margin-bottom:20px;">pull로 원격 저장소의 최신 커밋을 내 PC로 가져옵니다. push 전에 반드시 실행해 <strong style="color:var(--text)">충돌을 방지</strong>합니다.</p>
 
       <div class="info-box danger">
         <div class="info-box-label">🚨 협업의 핵심 규칙</div>
